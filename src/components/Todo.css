@@ -35,4 +35,36 @@ li{
     background-color: black !important;
     color: white !important;
     border: none !important;
+    
 }
+.list-items{
+    display: flex;
+}
+.list-items .list-item-lists{
+    flex: 1;
+    overflow: hidden;
+    /* text-align-last: center; */
+}
+.list-items .list-item-icons{
+    padding-left: 5px;
+    font-size: 25px;
+}
+#complete{
+    color: green;
+}
+#edit{
+    color: rgb(33, 33, 247);
+}
+#delete{
+    color: rgb(247, 109, 29);
+}
+#list-item{
+    text-decoration: line-through;
+    opacity: 0.3;
+}
+/* .mypost {
+    font-family: arial;
+    margin: auto;
+    min-width: 200px;
+    width: 200px;
+} */
