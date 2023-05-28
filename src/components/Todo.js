@@ -8,11 +8,20 @@ import { IoMdDoneAll } from 'react-icons/io'
 function Todo() {
     const [todo, setTodo] = useState('')
     const [todos, setTodos] = useState([])
+    const [msg, setMsg] = useState()
+
     const [editId, setEditId] = useState(0)
+    console.log("todo="+todo);
+    console.log("todos="+todos.list);
     const addTodo = () => {
-        if (todo !== '') {
+        const nan= todos.find((value)=> value.list ===todo)
+        if(nan){
+            setMsg('this alredy uploaded')
+        }
+        else if (todo !== ''  ) {
             setTodos([...todos, { list: todo, id: Date.now(), status: false }])
             setTodo('')
+            setMsg()
         } 
         if(editId){
             const editTodo = todos.find((value)=> value.id === editId)
@@ -50,6 +59,7 @@ function Todo() {
                 <button onClick={addTodo}>{editId ? 'EDIT' : 'ADD'}</button>
 
             </form>
+            <div className='divs'>{msg}</div>
             <div className='list'>
                 <ul>
                     {
